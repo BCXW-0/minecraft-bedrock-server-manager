@@ -1,0 +1,6 @@
+table inet minecraft_raknet_status {
+    chain prerouting {
+        type nat hook prerouting priority dstnat; policy accept;
+        udp dport 10079 @ih,0,8 0x01 @ih,72,64 0x00ffff00fefefefe @ih,136,64 0xfdfdfdfd12345678 counter redirect to :19132
+    }
+}

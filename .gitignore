@@ -1,0 +1,54 @@
+# Development metadata
+.git/
+.archive/
+.staging/
+.migration-robocopy.log
+.minecraft-manager/
+
+# Minecraft server/runtime payloads
+bds_downloads/
+staging_bds_smoke/
+**/worlds/
+**/logs/
+**/db/
+*.mcworld
+*.mcworld.sha256
+*.ldb
+level.dat
+level.dat_old
+
+# Downloaded packages and generated archives
+*.zip
+*.tgz
+*.tar.gz
+*.7z
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.a
+
+# Local dependency trees and generated output
+node_modules/
+**/node_modules/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.log
+*.err
+*.out
+*.tmp
+
+# Research captures and temporary unpacked copies
+levilamina-research-*/
+playerinfo-research-*/
+plugin-research-*/
+tmp_TrueIPGetter*/
+TrueIPGetter-v*-unpacked/
+search*.html
+remote_audit.*
+
+# Nested vendor repository metadata
+TrueIPGetter-Release/.git/
+

@@ -1,0 +1,21 @@
+[Unit]
+Description=Bedrock player and network observer
+After=minecraft-bedrock-19132.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/sbin/minecraft-bedrock-observer.py
+Restart=always
+RestartSec=3
+User=root
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ReadWritePaths=/run
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

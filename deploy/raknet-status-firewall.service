@@ -1,0 +1,14 @@
+[Unit]
+Description=Redirect only RakNet server-list pings to status responder
+Requires=raknet-status-responder.service
+After=raknet-status-responder.service network-pre.target
+
+[Service]
+Type=oneshot
+ExecStartPre=-/usr/sbin/nft delete table inet minecraft_raknet_status
+ExecStart=/usr/sbin/nft -f /etc/nftables.d/raknet-status-redirect.nft
+ExecStop=-/usr/sbin/nft delete table inet minecraft_raknet_status
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
